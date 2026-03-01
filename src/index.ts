@@ -1,9 +1,27 @@
 /**
- * EventDispatcher — Public API
- * Cell: CEL-EVENTDISPATCH-v0.1.0
- * Category: Eventing & State
+ * EventDispatch — Cell Layer
+ * Composes organelles per BIOLOGICAL_GOVERNANCE_CONSTITUTION §4.1
+ * Layer: cell → depends on → organelle
  */
 
-export { EventDispatcher, EventDispatcherValidationError } from './event-dispatch-cell';
-export { EventDispatcherOrchestrator } from './event-dispatch-orchestrator';
-export * from './types';
+import { EventDispatcherOrchestrator } from "@webwaka/organelle-event-dispatcher";
+import { MessageGatewayOrchestrator } from "@webwaka/organelle-message-gateway";
+
+export { EventDispatcherOrchestrator } from '@webwaka/organelle-event-dispatcher';
+export { MessageGatewayOrchestrator } from '@webwaka/organelle-message-gateway';
+
+/**
+ * EventDispatch Composition
+ * Assembles organelle-layer components into a cohesive cell-layer capability.
+ */
+export class EventDispatchComposition {
+  private eventDispatcherOrchestrator: EventDispatcherOrchestrator;
+  private messageGatewayOrchestrator: MessageGatewayOrchestrator;
+
+  constructor() {
+    this.eventDispatcherOrchestrator = new EventDispatcherOrchestrator();
+    this.messageGatewayOrchestrator = new MessageGatewayOrchestrator();
+  }
+}
+
+export * from "./types";
