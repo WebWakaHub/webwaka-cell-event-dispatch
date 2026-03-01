@@ -16,7 +16,10 @@
     "eventing-state"
   ],
   "license": "UNLICENSED",
-  "dependencies": {},
+  "dependencies": {
+    "@webwaka/organelle-event-dispatcher": "workspace:*",
+    "@webwaka/organelle-message-gateway": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.0.0",
     "jest": "^29.0.0",
